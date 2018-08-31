@@ -1,0 +1,4 @@
+{ "_id": ObjectId("5b87afbe0577aa976ecdd9ee"),
+  "id" : "my-client", 
+  "redirectUris" : [ "http://localhost:8000/sampleredirect" ], 
+  "grants" : [ "authorization_code" ] }

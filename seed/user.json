@@ -1,0 +1,4 @@
+{ "_id" : ObjectId("5b87b2690acf3fff39371124"),
+  "id" : 123,
+  "username" : "testuser", 
+  "password" : "pass123" }
