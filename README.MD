@@ -31,8 +31,8 @@ Once running, start a browser and navigate to http://localhost:8000. You will be
 Now you can trade the authorization code for a token by POSTing grant_type, code, redirect_uri, client_id and client_secret to the http://localhost:8000/o/token endpoint. You can do it with [httpie](https://httpie.org/) with the following command:
 
 ```
-http -f POST http://localhost:8000/o/token \ 
-  grant_type='authorization_code' \ 
+http -f POST http://localhost:8000/o/token \
+  grant_type='authorization_code' \
   code='<authorization_code>' \
   client_id='my-client' \
   client_secret='my-client-secret' \

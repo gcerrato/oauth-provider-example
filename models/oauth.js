@@ -96,17 +96,21 @@ class OAuth {
         return db.collection('tokens').findOne({accessToken: token})
       })
       .then(token => {
-        const client = this.getClient()
-        const res = {
-          accessToken: token.accessToken,
-          accessTokenExpiresAt: new Date(token.accessTokenExpiresAt),
-          refreshToken: token.refreshToken,
-          refreshTokenExpiresAt: new Date(token.refreshTokenExpiresAt),
-          scope: token.scope,
-          user: {id: token.userId},
-          client: client
+        if (token) {
+          const client = this.getClient()
+          const res = {
+            accessToken: token.accessToken,
+            accessTokenExpiresAt: new Date(token.accessTokenExpiresAt),
+            refreshToken: token.refreshToken,
+            refreshTokenExpiresAt: new Date(token.refreshTokenExpiresAt),
+            scope: token.scope,
+            user: {id: token.userId},
+            client: client
+          }
+          return res
+        } else {
+          return null
         }
-        return res
       })
       .catch(e => {
         console.warn(e)

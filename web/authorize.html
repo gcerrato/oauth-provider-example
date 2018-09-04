@@ -1,13 +1,16 @@
+<!DOCTYPE html>
 <html>
-    <h1>Give authorization</h1>
-    <p>Do you want to authorize this application?</p>
-    <form action="/o/authorize" method="POST">
-        <input name="scope" value="push-n-pull" type="hidden">
-        <input name="client_id" value="my-client" type="hidden">
-        <input name="state" value="cf484011-19b6-4212-b35f-a957b80e6526_9c5426ef-e51d-48a5-81b8-49e7b20bd091" type="hidden">
-        <input name="redirect_uri" type="hidden" value="http://localhost:8000/sampleredirect" />
-        <input name="response_type" type="hidden" value="code" />
+    <body>
+        <h1>Give authorization</h1>
+        <p>Do you want to authorize this application?</p>
+        <form action="/o/authorize" method="POST">
+            <input name="scope" value="push-n-pull" type="hidden">
+            <input name="client_id" value="my-client" type="hidden">
+            <input name="redirect_uri" type="hidden" value="http://localhost:8000/sampleredirect" />
+            <input name="response_type" type="hidden" value="code" />
 
-        <input type="submit" value="Allow">
-    </form>
+            <button name="allow" type="submit">Allow</button>
+            <button name="deny" formaction="/o/authorize?allowed=false">Deny</button>
+        </form>
+    </body>
 </html>

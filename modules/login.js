@@ -17,7 +17,7 @@ const login = async (req, res) => {
   if (redirect.length > 0) {
     return res.redirect(redirect)
   } else {
-    return res.redirect('home')
+    return res.redirect('/login')
   }
 }
 
